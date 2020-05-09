@@ -9,7 +9,7 @@ function parseIngredients(recipe) {
   const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
   const units = [...unitsShort, 'kg', 'g'];
 
-  const newIngredients = this.ingredients.map(el => {
+  const newIngredients = recipe.ingredients.map(el => {
     // 1) Uniform units
     let ingredient = el.toLowerCase().trimStart();
     unitsLong.forEach((unit, i) => {
@@ -32,7 +32,6 @@ function parseIngredients(recipe) {
       // Ex. 4 cups, arrCount is [4]
       const arrCount = arrIng.slice(0, unitIndex);
 
-      console.log(`Array count: ${arrCount.length}`);
       let count;
       if (arrCount.length === 1) {
         count = eval(arrIng[0].replace('-', '+'));
@@ -64,7 +63,6 @@ function parseIngredients(recipe) {
       }
     }
 
-    console.log(objIng);
     return objIng;
   });
 
