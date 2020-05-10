@@ -1,3 +1,5 @@
+const removeAdditionalWhitespace = require('../utils/removeAdditionalWhitespace');
+
 /**
  * Join the count, unit and the rest of ingredient together.
  *
@@ -14,10 +16,6 @@ function joinIngredients(recipe) {
   });
 
   return recipe;
-}
-
-function removeAdditionalWhitespace(str) {
-  return str.replace(/\s+/g, ' ').trim()
 }
 
 module.exports = joinIngredients;

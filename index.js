@@ -41,7 +41,7 @@ let recipe = {
       "FOR THE PIZZA:",
       "1 whole Large Eggplant (or Two Medium Eggplants)",
       "Kosher Salt, For Sprinkling",
-      "1 pint Grape Tomatoes",
+      "2 pint Grape Tomatoes",
       "2 cloves Garlic, Minced",
       "8 ounces, weight Fresh Mozzarella Cheese, Sliced Very Thin",
       "1/2 cup Freshly Grated Parmesan Cheese",

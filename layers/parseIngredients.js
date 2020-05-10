@@ -5,8 +5,8 @@
  * @returns {object} The recipe object with parsed ingredients
  */
 function parseIngredients(recipe) {
-  const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
-  const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+  const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds', 'pint'];
+  const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound', 'pint'];
   const units = [...unitsShort, 'kg', 'g'];
 
   const newIngredients = recipe.ingredients.map(el => {

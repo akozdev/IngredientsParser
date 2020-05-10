@@ -5,8 +5,8 @@
  * @returns {object} The recipe object with pluralised ingredients' units
  */
 function pluraliseUnits(recipe) {
-  const units = ['tbsp', 'oz', 'tsp', 'cup', 'pound', 'pinch'];
-  const pluralUnits = ['tbsps', 'oz', 'tsps', 'cups', 'pounds', 'pinches'];
+  const units = ['tbsp', 'oz', 'tsp', 'cup', 'pound', 'pinch', 'pint'];
+  const pluralUnits = ['tbsps', 'oz', 'tsps', 'cups', 'pounds', 'pinches', 'pints'];
 
   recipe.ingredients.forEach((ingredientObj, ingredientIndex) => {
     units.forEach((unit, unitIndex) => {
