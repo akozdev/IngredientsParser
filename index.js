@@ -8,6 +8,7 @@ const roundIngredients = require('./layers/roundIngredients');
 const parseIngredients = require('./layers/parseIngredients');
 const removeNonsense = require('./layers/removeNonsense');
 const pluraliseUnits = require('./layers/pluraliseUnits');
+const joinIngredients = require('./layers/joinIngredients');
 
 // const recipes = loadRecipes(config.RECIPES_PATH);
 //
@@ -61,6 +62,7 @@ recipe = parseIngredients(recipe);
 recipe = roundIngredients(recipe);
 recipe = removeNonsense(recipe);
 recipe = pluraliseUnits(recipe);
+recipe = joinIngredients(recipe);
 
 console.log(recipe);
 
