@@ -8,11 +8,12 @@ function pluraliseUnits(recipe) {
   const units = ['tbsp', 'oz', 'tsp', 'cup', 'pound', 'pinch'];
   const pluralUnits = ['tbsps', 'oz', 'tsps', 'cups', 'pounds', 'pinches'];
 
-  recipe.ingredients.forEach(ingredientObj => {
-    console.log(ingredientObj);
-    units.forEach((unit, index) => {
-      if (ingredientObj.ingredient.includes(unit)) {
-       ingredientObj.ingredient.replace(unit, pluralUnits[index]);
+  recipe.ingredients.forEach((ingredientObj, ingredientIndex) => {
+    units.forEach((unit, unitIndex) => {
+      if (ingredientObj.unit === unit) {
+        if (ingredientObj.count > 1) {
+          recipe.ingredients[ingredientIndex].unit = pluralUnits[unitIndex];
+        }
       }
     });
   });

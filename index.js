@@ -60,7 +60,7 @@ recipe = flattenRecipe(recipe);
 recipe = parseIngredients(recipe);
 recipe = roundIngredients(recipe);
 recipe = removeNonsense(recipe);
-// recipe = pluraliseUnits(recipe);
+recipe = pluraliseUnits(recipe);
 
 console.log(recipe);
 
