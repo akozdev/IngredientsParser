@@ -14,7 +14,7 @@ function saveRecipes(dir, recipes) {
 
   recipes.forEach(recipe => {
     // Remove the recipe from recipe.recipe.recipe_id later (simplify the object)
-    fs.writeFileSync(path.resolve(dir, `${recipe.recipe.recipe_id}.json`), JSON.stringify(recipe));
+    fs.writeFileSync(path.resolve(dir, `${recipe.recipe_id}.json`), JSON.stringify(recipe));
   })
 }
 
