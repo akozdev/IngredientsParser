@@ -12,10 +12,9 @@
 function removeNonsense(recipe) {
   // Check for non-alphanumeric characters only
   var reg = /^[^\dA-Za-z]*$/;
-   recipe.ingredients.forEach(ingredient => {
-    if (reg.test(ingredient.ingredient)) {
-      delete ingredient.ingredient;
-    }
+
+  recipe.ingredients = recipe.ingredients.filter(ingredientObj => {
+    return !reg.test(ingredientObj.ingredient);
   });
 
   return recipe;

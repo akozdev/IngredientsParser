@@ -7,6 +7,7 @@ const flattenRecipe = require('./layers/flattenRecipe');
 const roundIngredients = require('./layers/roundIngredients');
 const parseIngredients = require('./layers/parseIngredients');
 const removeNonsense = require('./layers/removeNonsense');
+const pluraliseUnits = require('./layers/pluraliseUnits');
 
 // const recipes = loadRecipes(config.RECIPES_PATH);
 //
@@ -25,7 +26,7 @@ const removeNonsense = require('./layers/removeNonsense');
 
 
 
-
+// TESTING
 let recipe = {
   "recipe": {
     "publisher": "The Pioneer Woman",
@@ -59,6 +60,7 @@ recipe = flattenRecipe(recipe);
 recipe = parseIngredients(recipe);
 recipe = roundIngredients(recipe);
 recipe = removeNonsense(recipe);
+// recipe = pluraliseUnits(recipe);
 
 console.log(recipe);
 
