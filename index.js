@@ -51,7 +51,8 @@ saveRecipes(path.resolve(__dirname, 'data', 'test'), filteredRecipes);
 //       "8 ounces, weight Fresh Mozzarella Cheese, Sliced Very Thin",
 //       "1/2 cup Freshly Grated Parmesan Cheese",
 //       "Extra Virgin Olive Oil For Drizzling",
-//       "Freshly Ground Black Pepper"
+//       "Freshly Ground Black Pepper",
+//       "300ml fresh milk"
 //     ],
 //     "source_url": "http://thepioneerwoman.com/cooking/2010/02/my-favorite-pizza/",
 //     "recipe_id": "47161",
@@ -61,7 +62,7 @@ saveRecipes(path.resolve(__dirname, 'data', 'test'), filteredRecipes);
 //     "title": "PW’s Favorite Pizza"
 //   }
 // };
-
+//
 // recipe = flattenRecipe(recipe);
 // recipe = parseIngredients(recipe);
 // recipe = roundIngredients(recipe);

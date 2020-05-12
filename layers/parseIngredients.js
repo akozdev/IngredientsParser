@@ -1,3 +1,5 @@
+const parseMixedUnit = require('../utils/parseMixedUnit');
+
 /**
  * Parses the ingredients of a recipe, so that it preserves the same style throughout all of the recipes
  *
@@ -5,8 +7,8 @@
  * @returns {object} The recipe object with parsed ingredients
  */
 function parseIngredients(recipe) {
-  const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds', 'pint'];
-  const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound', 'pint'];
+  const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds', 'pint', 'milliliters', 'liters', 'grams', 'kilograms'];
+  const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound', 'pint', 'ml', 'l', 'g', 'kg'];
   const units = [...unitsShort, 'kg', 'g'];
 
   const newIngredients = recipe.ingredients.map(el => {
@@ -22,6 +24,22 @@ function parseIngredients(recipe) {
 
     // 3) Parse ingredients into count, unit and ingredient
     const arrIng = ingredient.split(' ');
+
+    // Check for the words that contain unit, but are not the mixed unit
+    unitsShort.forEach(unit => {
+      if (arrIng[0].includes(unit)) {
+        const unitObj = parseMixedUnit(arrIng[0]);
+
+        if (unitObj.count) {
+          arrIng.splice(0, 1, parseInt(arrIng[0], 10).toString(), unit);
+        }
+      }
+    });
+
+    // Check if there is a unit mixed with count, for example, 300ml
+    // if (arrIng[0].includes('ml')) {
+    //   arrIng.splice(0, 1, parseInt(arrIng[0], 10).toString(), 'ml');
+    // }
 
     const unitIndex = arrIng.findIndex(el2 => units.includes(el2));
 
