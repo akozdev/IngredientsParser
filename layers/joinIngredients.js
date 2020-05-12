@@ -9,6 +9,13 @@ const removeAdditionalWhitespace = require('../utils/removeAdditionalWhitespace'
 function joinIngredients(recipe) {
   recipe.ingredients = recipe.ingredients.map(ingredientObj => {
     if (ingredientObj.unit) {
+      if (ingredientObj.unit === 'ml' ||
+          ingredientObj.unit === 'l'  ||
+          ingredientObj.unit === 'g'  ||
+          ingredientObj.unit === 'kg') {
+        return removeAdditionalWhitespace(`${ingredientObj.count}${ingredientObj.unit} of ${ingredientObj.ingredient}`);
+      }
+
       return removeAdditionalWhitespace(`${ingredientObj.count} ${ingredientObj.unit} of ${ingredientObj.ingredient}`);
     } else {
       return removeAdditionalWhitespace(`${ingredientObj.count} ${ingredientObj.unit} ${ingredientObj.ingredient}`);
